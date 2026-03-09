@@ -1,8 +1,7 @@
-def garden_operations():
+def garden_operations() -> None:
     try:
         print("Testing ValueError...")
-        number = int("abc")
-        print(f"{number}")
+        int("abc")
     except ValueError as e:
         print(f"Caught ValueError: {e}\n")
 
@@ -22,13 +21,13 @@ def garden_operations():
 
     try:
         print("Testing KeyError...")
-        errorDict = {"Rose": 1, "SunFlower": 2}
-        print(f"{errorDict['Missing']}")
+        error_dict = {"Rose": 1, "SunFlower": 2}
+        print(f"{error_dict['Missing']}")
     except KeyError as e:
         print(f"Caught KeyError: {e}\n")
 
 
-def test_error_types():
+def test_error_types() -> None:
     print(" === Garden Error Types Demo ===\n")
     garden_operations()
 
@@ -37,7 +36,7 @@ def test_error_types():
         int("esto_no_es_un_numero")
     except (ValueError, ZeroDivisionError) as e:
         print(f"Caught an error, but program continues!: {e}\n")
-    print("All error types tested succesfully!")
+    print("All error types tested successfully!")
 
 
 if __name__ == "__main__":

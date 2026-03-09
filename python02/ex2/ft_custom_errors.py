@@ -10,14 +10,14 @@ class WaterError(GardenError):
     pass
 
 
-def simular_problema(tipo):
+def simular_problema(tipo: str) -> None:
     if tipo == "planta":
         raise PlantError("The tomato plant is wilting!")
     elif tipo == "agua":
         raise WaterError("Not enough water in the tank!")
 
 
-def test_ejercicio():
+def test_ejercicio() -> None:
     print("=== Custom Garden Errors Demo ===")
 
     print("\nTesting PlantError...")
