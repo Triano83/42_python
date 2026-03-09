@@ -1,21 +1,21 @@
 class SecurePlant:
-    def __init__(self, name, height, age) -> None:
-        self.name = name
-        self.__height = 0
-        self.__age = 0
+    def __init__(self, name: str, height: int, age: int) -> None:
+        self.name: str = name
+        self.__height: int = 0
+        self.__age: int = 0
 
         print("=== Garden Security System ===")
         print(f"Plant created: {self.name}")
         self.set_height(height)
         self.set_age(age)
 
-    def get_height(self):
+    def get_height(self) -> int:
         return self.__height
 
-    def get_age(self):
+    def get_age(self) -> int:
         return self.__age
 
-    def set_height(self, value):
+    def set_height(self, value: int) -> None:
         if value < 0:
             print(f"Invalid operation attempted: height {value}cm [REJECTED]")
             print("Security: Negative height rejected")
@@ -23,7 +23,7 @@ class SecurePlant:
             self.__height = value
             print(f"Height updated: {self.__height}cm [OK]")
 
-    def set_age(self, value):
+    def set_age(self, value: int) -> None:
         if value < 0:
             print(f"Invalid operation attempted: age {value} days [REJECTED]")
             print("Security: Negative age rejected")
@@ -31,13 +31,13 @@ class SecurePlant:
             self.__age = value
             print(f"Age updated: {self.__age} days [OK]")
 
-    def display_status(self):
-        print(f"Current plant: {self.name} ({self.__height}cm,"
+    def display_status(self) -> None:
+        print(f"Current plant: {self.name} ({self.__height}cm, "
               f"{self.__age} days)")
 
 
 def main() -> None:
-    my_plant = SecurePlant("Rose", 25, 30)
+    my_plant: SecurePlant = SecurePlant("Rose", 25, 30)
     print()
     my_plant.set_height(-5)
     print()

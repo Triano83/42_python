@@ -1,16 +1,16 @@
 class Plant:
-    def __init__(self, name, height, age):
-        self.name = name
-        self.height = height
-        self.age = age
+    def __init__(self, name: str, height: int, age: int) -> None:
+        self.name: str = name
+        self.height: int = height
+        self.age: int = age
 
-    def display_info(self):
+    def display_info(self) -> None:
         print(f"{self.name}: {self.height}cm, {self.age} days old")
 
 
-def main():
+def main() -> None:
     print("=== Garden Plant Registry ===")
-    garden = [
+    garden: list[Plant] = [
         Plant("Rose", 25, 30),
         Plant("Sunflower", 80, 45),
         Plant("Cactus", 15, 120)
